@@ -1,0 +1,21 @@
+version: "3"
+services:
+  truvideo2-mongo-1:
+    image: mongo:latest
+    container_name: truvideo2-mongo-1
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/db:/data/db
+
+  truvideo2-app-1:
+    build: .
+    container_name: truvideo2-app-1
+    ports:
+      - "3000:3000"
+    depends_on:
+      - truvideo2-mongo-1
+    environment:
+      - PORT=3000
+      - MONGODB_URI=mongodb://truvideo2-mongo-1:27017/truvideo
+      - JWT_SECRET=truvideo2023
