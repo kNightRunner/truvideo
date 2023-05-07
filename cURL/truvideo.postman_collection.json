@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "f545be1b-4efe-46d8-8085-f20ecfbb61f5",
+		"name": "truvideo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5310849"
+	},
+	"item": [
+		{
+			"name": "Get",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTY2NmZkYjNlNzA2MzQ0ZjQzODNhMSIsImlhdCI6MTY4MzQwNDU2OSwiZXhwIjoxNjgzNDA4MTY5fQ.YjFd97TCAQxj9DyObTHhFwfnCbdKiVnl4Vc8h-vcSts"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put",
+			"request": {
+				"auth": {
+					"type": "jwt",
+					"jwt": [
+						{
+							"key": "algorithm",
+							"value": "HS256",
+							"type": "string"
+						},
+						{
+							"key": "isSecretBase64Encoded",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "payload",
+							"value": "{}",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "headerPrefix",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "queryParamKey",
+							"value": "token",
+							"type": "string"
+						},
+						{
+							"key": "header",
+							"value": "{}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTY2NmZkYjNlNzA2MzQ0ZjQzODNhMSIsImlhdCI6MTY4MzQwNDU2OSwiZXhwIjoxNjgzNDA4MTY5fQ.YjFd97TCAQxj9DyObTHhFwfnCbdKiVnl4Vc8h-vcSts"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "firstName",
+							"value": "Jesus",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "de Nazaret",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "123 Updated St",
+							"type": "text"
+						},
+						{
+							"key": "profileImage",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/64566de734a615a02cad3ad3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"64566de734a615a02cad3ad3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login JWT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"leomessi\", \"password\": \"Argentina2022\"}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post -",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTY2NmZkYjNlNzA2MzQ0ZjQzODNhMSIsImlhdCI6MTY4MzM4NDA3MCwiZXhwIjoxNjgzMzg3NjcwfQ.8gp9oYYw4yUMTjwH9RfZDxpajnjOvzufJbFjeiDw-jE"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "firstName",
+							"value": "John",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Doe",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "123 Main St",
+							"type": "text"
+						},
+						{
+							"key": "profileImage",
+							"type": "file",
+							"src": "/home/nicolas/Pictures/Screenshots/Screenshot from 2023-05-04 23-05-20.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
