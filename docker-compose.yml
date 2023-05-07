@@ -7,7 +7,6 @@ services:
       - "27017:27017"
     volumes:
       - ./data/db:/data/db
-
   truvideo2-app-1:
     build: .
     container_name: truvideo2-app-1
@@ -19,3 +18,4 @@ services:
       - PORT=3000
       - MONGODB_URI=mongodb://truvideo2-mongo-1:27017/truvideo
       - JWT_SECRET=truvideo2023
+      - SEED_DATABASE=true
