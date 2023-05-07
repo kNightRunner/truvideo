@@ -1,17 +1,20 @@
 import express, { Request, Response, NextFunction } from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import userRoutes from "./routes/userRoutes";
+import authRoutes from "./routes/authRoutes";
+import { errorHandler } from "./middleware/errorHandler";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
-app.use("/api", );
-app.use("/api", );
+app.use("/api", userRoutes);
+app.use("/api", authRoutes);
 
-app.use();
-app.use();
+app.use(authRoutes);
+app.use(errorHandler);
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   console.error(err.stack);
