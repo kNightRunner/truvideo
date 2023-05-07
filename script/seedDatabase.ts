@@ -6,8 +6,7 @@ import dotenv from "dotenv";
 import bcrypt from "bcrypt";
 
 dotenv.config();
-
-const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/truvideo";
+const MONGO_URI = process.env.MONGODB_URI ?? "mongodb://localhost:27017/truvideo";
 
 async function hashPassword(password: string): Promise<string> {
   const saltRounds = 10;
@@ -16,7 +15,8 @@ async function hashPassword(password: string): Promise<string> {
 }
 
 async function seedDatabase() {
-  const hashedPassword = await hashPassword("Argentina2022");
+  const hashedPassword = await hashPassword(process.env.HASHED_PASSWORD ?? "defaultPassword");
+
 
   const users: IUser[] = [
     new User({

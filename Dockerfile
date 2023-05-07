@@ -15,4 +15,6 @@ RUN npm run build
 
 EXPOSE 3000
 
-CMD [ "npm", "run", "serve" ]
+ENV SEED_DATABASE=false
+
+CMD [ "npm", "run", "start-check-seed" ]
