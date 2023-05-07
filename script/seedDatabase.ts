@@ -1,6 +1,6 @@
 // Purpose: Seed the database with some dummy data for testing purposes
 
-import User, { IUser } from "../models/users";
+import User, { IUser } from "../src/models/users";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import bcrypt from "bcrypt";
