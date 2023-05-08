@@ -37,8 +37,12 @@ docker-compose up
 
 2. The API should now be accessible at `http://localhost:3000`.
 
-## API Endpoints
+3. POST /login - This endpoint is used to authenticate a user and obtain an access token. The client sends a request to this endpoint with their login credentials in the request body. 
+If the credentials are valid, the server responds with an access token that the client can use to make authenticated requests to other endpoints. 
+The token is typically sent in the Authorization header of subsequent requests.
 
+## API Endpoints
+- `POST /login` - Use this endpoint to log in and receive the token
 - `POST /users` - Create a new user
 - `GET /users` - Retrieve all users
 - `PUT /users/:id` - Update a user
